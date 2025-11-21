@@ -1,0 +1,29 @@
+body {
+    background: #000;         /* black background */
+    color: #fff;              /* white text */
+    font-family: "Courier New", monospace;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    line-height: 1.1;
+}
+
+pre {
+    white-space: pre;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.1;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+nav {
+    margin-bottom: 2rem;
+}
+
+nav a {
+    margin-right: 1rem;
+}
