@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Re-Existence Echoes — Factory Academy 2024</title>
+<link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../projects.html">Projects</a>
+  <a href="../store.html">Store</a>
+  <a href="../contact.html">Contact</a>
+</nav>
+
+<h1>Re-Existence Echoes — Factory Academy 2024</h1>
+
+<p style="color:#bdbdbd">Short description: project intention, medium, and exhibition context.</p>
+
+<h2>Gallery</h2>
+<div class="grid">
+  <figure class="card" data-src="../images/echoes-1.jpg" data-caption="Re-Existence Echoes — view 1"><img src="../images/echoes-1.jpg"></figure>
+  <figure class="card" data-src="../images/echoes-2.jpg" data-caption="Re-Existence Echoes — view 2"><img src="../images/echoes-2.jpg"></figure>
+  <figure class="card" data-src="../images/echoes-3.jpg" data-caption="Re-Existence Echoes — detail"><img src="../images/echoes-3.jpg"></figure>
+</div>
+
+<h2>Video</h2>
+<video controls width="800" style="max-width:100%">
+  <source src="../videos/echoes.mp4" type="video/mp4">
+</video>
+
+<h2>Process notes</h2>
+<pre class="ascii">
+[ paste ASCII / process text here ]
+</pre>
+
+<div id="modal" role="dialog" aria-hidden="true">
+  <div id="modal-inner">
+    <img id="modal-media" src="" alt="">
+    <div class="meta" id="modal-caption"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal = document.getElementById('modal');
+  const modalMedia = document.getElementById('modal-media');
+  const modalCaption = document.getElementById('modal-caption');
+
+  function open(src, caption){
+    modalMedia.src = src;
+    modalCaption.textContent = caption;
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden','false');
+  }
+  function close(){
+    modal.style.display = 'none';
+    modalMedia.src = '';
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  document.addEventListener('click', e=>{
+    const card = e.target.closest('.card');
+    if(card){
+      open(card.dataset.src, card.dataset.caption);
+    } else if(e.target === modal || e.target === modalMedia){
+      close();
+    }
+  });
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') close(); });
+})();
+</script>
+
+</body>
+</html>
+
