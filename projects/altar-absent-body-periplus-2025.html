@@ -1,40 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Altar for the Absent Body — Periplus 2025</title>
-<style>
-body { background:#000; color:#fff; font-family:monospace; padding:40px; max-width:900px; margin:auto; }
-a { color:#fff; text-decoration:none; border-bottom:1px solid #fff; }
-img { width:100%; margin:20px 0; }
-pre { white-space:pre; overflow-x:auto; font-size:12px; line-height:14px; }
-</style>
+<link rel="stylesheet" href="../style.css"/>
 </head>
 <body>
 
-<pre>
-%%                                                                                        
-=@*                                                                                         
-@@@                 @                                                                        
-@@@@                 @                                                                        
--@@@@@                 -@                                                                       
-#@@@@@@                  +@#                                                                     
-</pre>
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../projects.html">Projects</a>
+  <a href="../store.html">Store</a>
+  <a href="../contact.html">Contact</a>
+</nav>
 
 <h1>Altar for the Absent Body — Periplus 2025</h1>
-<p>
-Developed during the Periplus international residency, this altar explores absence, memory, and ecological grief.  
-The work combines fired clay, ash-based pastes, and site-specific soil to create an object that holds space for bodies no longer present.
-</p>
 
-<p>
-The altar echoes post-human ritual architectures and gestures toward new forms of mourning and regeneration.
-</p>
+<p style="color:#bdbdbd">Short description: add a 1–3 sentence summary of the project, context and materials.</p>
 
-<a href="index.html">← Back</a>
+<h2>Gallery</h2>
+<div class="grid">
+  <figure class="card" data-src="../images/altar-1.jpg" data-caption="Altar for the Absent Body — view 1"><img src="../images/altar-1.jpg"></figure>
+  <figure class="card" data-src="../images/altar-2.jpg" data-caption="Altar for the Absent Body — view 2"><img src="../images/altar-2.jpg"></figure>
+  <figure class="card" data-src="../images/altar-3.jpg" data-caption="Altar for the Absent Body — detail"><img src="../images/altar-3.jpg"></figure>
+</div>
 
-<hr>
-<p>© fenotype — <a href="https://www.instagram.com/feno1000000/">@feno1000000</a></p>
+<h2>Video</h2>
+<video controls width="800" style="max-width:100%">
+  <source src="../videos/altar.mp4" type="video/mp4">
+</video>
+
+<h2>Process notes</h2>
+<pre class="ascii">
+[ paste ASCII / process text here ]
+</pre>
+
+<div id="modal" role="dialog" aria-hidden="true">
+  <div id="modal-inner">
+    <img id="modal-media" src="" alt="">
+    <div class="meta" id="modal-caption"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal = document.getElementById('modal');
+  const modalMedia = document.getElementById('modal-media');
+  const modalCaption = document.getElementById('modal-caption');
+
+  function open(src, caption){
+    modalMedia.src = src;
+    modalCaption.textContent = caption || '';
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden','false');
+  }
+  function close(){
+    modal.style.display = 'none';
+    modalMedia.src = '';
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  document.addEventListener('click', e=>{
+    const card = e.target.closest('.card');
+    if(card){
+      open(card.dataset.src, card.dataset.caption);
+    } else if(e.target === modal || e.target === modalMedia){
+      close();
+    }
+  });
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') close(); });
+})();
+</script>
 
 </body>
 </html>
