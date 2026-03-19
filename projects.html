@@ -1,16 +1,114 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>fenotype.xyz — Projects</title>
-<link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>fenotype.xyz — Projects</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e0e0e0;
+            --accent-color: #ffffff;
+            --secondary-text: #888888;
+            --coming-soon-bg: #333333;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        nav {
+            margin-bottom: 60px;
+        }
+
+        nav a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .project-list li {
+            margin-bottom: 12px;
+        }
+
+        .project-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 16px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .project-list a:hover {
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background-color: var(--coming-soon-bg);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            border-radius: 2px;
+        }
+
+        .hint {
+            color: var(--secondary-text);
+            font-size: 13px;
+            margin-bottom: 40px;
+        }
+
+        pre {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 8px;
+            line-height: 1.1;
+            color: #444; /* Subtle ASCII art color for depth */
+            overflow-x: auto;
+            white-space: pre;
+            margin-top: 50px;
+            user-select: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body { padding: 20px; }
+            pre { font-size: 4px; }
+        }
+    </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="projects.html" style="color: white;">Projects</a>
   <a href="store.html">Store</a>
   <a href="contact.html">Contact</a>
 </nav>
@@ -27,7 +125,9 @@
   <li><a href="projects/biomass.html">Biomass — 2023</a></li>
 </ul>
 
-<p style="color:#bdbdbd; font-size:13px">Click a project to open the full page with gallery and video placeholders.</p>
+<div class="coming-soon">Updates coming soon</div>
+
+<p class="hint">Click a project to view the gallery and documentation.</p>
 
 <pre>
 ▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▓▓▓▓█▓▒░░░░▒▓█▓▓▓▓▓▓▓▓▓▒▒▓▓▓▓▓▒▒░░░░░░░░░▒▒▓▓▓▓▓▒░░░░░▒▒▓▓▓▓▓▒▒▒▒░░░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░▒▒▓▓▓█▓▓▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒░
@@ -49,7 +149,7 @@
 ▓█▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓█▓▓▒░░░░░░░░▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▓▓▓▒░░░░░░░▒▓▓▓▓▓▓█▓▓▓▓▒░░░░░░░░░░░░▒▓▓▓▓█▓▓▓▓▓▓▒░░░░░▒▓▓▒░░░░▒▒▓▓▓▒▒▒▒▒░░░░░░░░░░░▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒░░░░░░░░░▒▒▒▒▓
 ▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░░░▒▓█▓▓▓▒▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▒▒▒░░░▒▓▓▓▒▒░░░░▒▓▓▓▓▓▓▒▓▒▒▒▒░░░░░░░░░░░░░░░▒▒▓▓▓▓▓▓▓█▓▒▒▒▓▓▓▒▒░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓
 ▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓▒▒▒░░░░▒▒▒▓▓██▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▓▓▓▓▓▓▓██▓▓▓▓▒▒▒░░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒
-░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░░░░▒▓▓▓▓▓▓▓▒░░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▓▓▓██▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓▒▒░░░░▒▒▓▓▓███▓▓▓▓▓▒▒░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░
+▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░▒▓▓▓▓▓▓▓▒▒░░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▓▓▓██▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▒▒▒▒▓▓▓▓▓▓▒▒░░░░▒▒▓▓▓███▓▓▓▓▓▒▒░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░
 ░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░▒▓▓▓▓▓▓▓▒▒░░░░░░░░░░░░▒▒▓▓▓██▓▓▓▓▒▒░░░░░░▒▓██▓▓▓▓▒░░░░░░░░░▒▒░░░░░░░░░▒▓▓▓█████▓▓▓▒▒▓▓███▓▓▓▓███▓▒▒░░░░░░░░░░▒▒▓▓▓▓▓▓▓▒░░░░░░░░░░▒▒▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒░
 ▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▓▓▓▓▓▓██▓▓▒░░░░░░░░░▒▒▓███▓▓▓▓████▓▒▒▒▒▓▓▓███▓▓▓▓▒░░░░░░░░░▒▒░░░░░░░░░▒▓▓▓▓██▓▒▒░░░░░▒▒▓▓▓▓█▓▓▓▒▒░░░░░░░░░░░░░▒▒▓▓▓▓█▓▒░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▒▒▒▒▒▒▓▓▓▓█▓▒▒▒▒▓▓▓▓▓▓███▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░▒▓▓▓▓██▓▓▓▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▒▒░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▒░░░░░░░░░░░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒
